@@ -1,0 +1,40 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Global
+      </mat-panel-title>
+      <mat-panel-description>
+        Commonly used SPARQL queries
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-list #global>
+        <mat-list-item  *ngFor="let query of globalQueries">
+            <h3 matLine> {{query.name}} </h3>
+            <p matLine> {{query.uuid}} </p>
+            <button mat-button [matMenuTriggerFor]="menu">Action</button>
+        </mat-list-item >
+    </mat-list>
+    <mat-menu #menu>
+        <button mat-menu-item>View/Edit</button>
+        <button mat-menu-item>Delete</button>
+      </mat-menu>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal
+      </mat-panel-title>
+      <mat-panel-description>
+        User defined queries
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    
+    <mat-selection-list #global>
+        <mat-list-option *ngFor="let personal of personalQueries">
+          {{ personal }}
+        </mat-list-option>
+    </mat-selection-list>
+  </mat-expansion-panel>
+</mat-accordion>

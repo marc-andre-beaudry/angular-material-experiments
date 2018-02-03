@@ -1,0 +1,35 @@
+<div fxLayout="row"
+     fxFill>
+      
+  <div fxFlex="20%" fxFill>    
+    <mat-card>    
+      <app-query-explorer></app-query-explorer>
+    </mat-card>
+  </div>
+  <div fxFlex="80%">
+    <mat-card>
+      <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+              SPARQL Query Editor
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>    
+            <app-query-editor></app-query-editor>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+              Result Explorer
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>        
+            <app-query-result></app-query-result>
+          </mat-expansion-panel>
+        </mat-accordion>    
+    </mat-card>    
+  </div>      
+</div>

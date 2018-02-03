@@ -1,0 +1,21 @@
+
+<mat-form-field>
+  <input type="text" placeholder="Database Connection" matInput [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let connection of connections" [value]="connection.name">
+      {{ connection.name }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<button mat-raised-button>Execute</button>
+<mat-tab-group>
+  <mat-tab label="Tab 1">
+      <mat-form-field>
+          <textarea matInput placeholder="Autosize textarea" matTextareaAutosize matAutosizeMinRows="2"
+                    >                            
+            {{ code }}
+        </textarea>
+        </mat-form-field>
+  </mat-tab>
+  <mat-tab label="Tab 2">Content 2</mat-tab>
+</mat-tab-group>       
