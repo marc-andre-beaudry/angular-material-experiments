@@ -1,0 +1,57 @@
+<div>
+  <h2>
+    Systems with Roles
+    <button class="systems-header-filter" mat-icon-button [matMenuTriggerFor]="systemsFilter">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+    <mat-menu class="systems-header-filter-menu" #systemsFilter="matMenu" xPosition="before">
+      <button mat-menu-item (click)="onFilterSystemRoles('ALL')">
+        <mat-icon>assignment</mat-icon>
+        <span>All</span>
+      </button>
+      <button mat-menu-item (click)="onFilterSystemRoles('ITSO')">
+        <mat-icon>assignment</mat-icon>
+        <span>IT System Owner</span>
+      </button>
+      <button mat-menu-item (click)="onFilterSystemRoles('BUSO')">
+        <mat-icon>assignment</mat-icon>
+        <span>BU System Owner</span>
+      </button>
+      <button mat-menu-item (click)="onFilterSystemRoles('DEV')">
+        <mat-icon>assignment</mat-icon>
+        <span>DEV</span>
+      </button>
+      <button mat-menu-item (click)="onFilterSystemRoles('QA')">
+        <mat-icon>assignment</mat-icon>
+        <span>QA</span>
+      </button>
+      <button mat-menu-item (click)="onFilterSystemRoles('SUPPORT')">
+        <mat-icon>assignment</mat-icon>
+        <span>Support</span>
+      </button>
+    </mat-menu>
+    <mat-chip-list class="systems-header-info">
+      <mat-chip>
+        Displaying {{filteredSystems.length}} items
+      </mat-chip>
+    </mat-chip-list>
+  </h2>
+  <mat-card *ngFor="let system of filteredSystems" class="systems-item-card">
+    <mat-card-title>{{system.taiDisplayName}} ({{system.name}})
+      <span>
+          <mat-chip-list>
+            <mat-chip *ngIf="system.itso" color="primary" selected="true">ITSO</mat-chip>
+            <mat-chip *ngIf="system.buso" color="accent" selected="true">BUSO</mat-chip>
+            <mat-chip *ngIf="system.dev">DEV</mat-chip>
+            <mat-chip *ngIf="system.qa">QA</mat-chip>
+            <mat-chip *ngIf="system.support" >SUPPORT</mat-chip>
+          </mat-chip-list>
+      </span>    
+    </mat-card-title>
+    <mat-card-subtitle>
+        {{system.displayName}}
+      <span>
+      </span>
+    </mat-card-subtitle>
+  </mat-card>
+</div>

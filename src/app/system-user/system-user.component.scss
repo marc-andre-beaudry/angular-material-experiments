@@ -1,0 +1,32 @@
+mat-card {
+    padding: 10px;
+    span {
+      float: right;
+    }
+}
+
+.systems-header-filter {
+    float: right;
+    position: relative;
+    left: 10px;
+    top: -5px;
+    margin-left: -10px;
+}
+
+.systems-header-info {
+  float: right;
+  font-weight: normal;
+}
+
+.systems-item-card {
+    border-left-color: rgba(63, 81, 181, 1);
+    border-left-width: 2px;
+    border-left-style: solid;
+    margin-bottom: 10px;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 15px 1px rgba(63, 81, 181, 0.4),
+        0 0 15px 1px rgba(63, 81, 181, 0.4),
+        0 0 15px 1px rgba(63, 81, 181, 0.4);
+    }
+}

@@ -7,8 +7,6 @@ import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  isDarkTheme = false;
-
   constructor() {
   }
 }

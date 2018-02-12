@@ -9,11 +9,13 @@ import { AppMaterialModule } from './app.material.module';
 import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { EditorComponent } from './editor/editor.component';
-import { QueryExplorerComponent } from './query-explorer/query-explorer.component';
-import { QueryResultComponent } from './query-result/query-result.component';
-import { QueryEditorComponent } from './query-editor/query-editor.component';
-import { QueryStoreService } from 'app/query-store.service';
+import { SearchHistoryService } from 'app/search-history.service';
+import { SystemUserService } from 'app/system-user.service';
+import { SearchService } from 'app/search.service';
+import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
+import { SearchHistoryComponent } from './search-history/search-history.component';
+import { SystemUserComponent } from './system-user/system-user.component';
 
 @NgModule({
   imports: [
@@ -24,9 +26,9 @@ import { QueryStoreService } from 'app/query-store.service';
     FlexLayoutModule
   ],
   
-  declarations: [AppComponent, EditorComponent, QueryExplorerComponent, QueryResultComponent, QueryEditorComponent],
+  declarations: [AppComponent, HomeComponent, SearchComponent, SearchHistoryComponent, SystemUserComponent],
   entryComponents: [],
-  providers: [QueryStoreService],
+  providers: [SearchHistoryService, SystemUserService, SearchService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

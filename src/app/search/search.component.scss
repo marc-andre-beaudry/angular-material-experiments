@@ -1,0 +1,23 @@
+.search-input {
+    width: 100%;
+    transition: all 0.5s;
+    display: flex;
+    padding: 10px 10px 10px 20px;
+
+    input {
+        flex-grow: 1;
+        border: 0;
+        font-size: 20px;
+        min-width: 100px;
+    }
+    &.has-focus {
+        box-shadow: 0 0 15px 1px rgba(63, 81, 181, 0.4),
+        0 0 15px 1px rgba(63, 81, 181, 0.4),
+        0 0 15px 1px rgba(63, 81, 181, 0.4);
+    }
+}
+
+.search-icon {
+    margin-top: 4px;
+    margin-right: 4px;
+}

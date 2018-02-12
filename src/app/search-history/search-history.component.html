@@ -1,0 +1,27 @@
+<div>
+  <h2>
+    Search History
+    <button class="search-history-header-filter" mat-icon-button [matMenuTriggerFor]="searchHistoryFilter">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+    <mat-menu class="search-history-header-filter-menu" #searchHistoryFilter="matMenu" xPosition="before">
+      <button mat-menu-item>
+        <mat-icon>assignment</mat-icon>
+        <span>All</span>
+      </button>
+    </mat-menu>
+    <mat-chip-list class="search-history-header-info">
+      <mat-chip>
+        Displaying {{searchHistoryItems.length}} items
+      </mat-chip>
+    </mat-chip-list>
+  </h2>
+  <mat-card *ngFor="let item of searchHistoryItems" class="search-history-item-card">
+      <mat-card-title>{{item.displayName}} {{item.displayName !== item.name ? '(' + item.name + ')' : ''}}<span></span></mat-card-title>
+      <mat-card-subtitle>
+          {{item.className}}
+        <span>
+        </span>
+      </mat-card-subtitle>
+    </mat-card>
+</div>

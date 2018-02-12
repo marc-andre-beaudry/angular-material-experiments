@@ -1,0 +1,10 @@
+<mat-card class="search-input" [ngClass]="{ 'has-focus': hasFocus }">
+  <input (focus)="hasFocus = true" (blur)="hasFocus = false" [matAutocomplete]="auto"
+  placeholder="Quick search"/>
+  <mat-icon class="search-icon">search</mat-icon>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let searchResult of searchResults" [value]="option">
+      {{searchResult.displayName}} {{searchResult.displayName !== searchResult.name ? '(' + searchResult.name + ')' : ''}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-card>
